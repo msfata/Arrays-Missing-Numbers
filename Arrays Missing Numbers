@@ -1,0 +1,24 @@
+
+
+import java.util.Arrays;
+
+public class ArraysMissing {
+	public static void main(String[] args) {
+		Integer[] in = getMissingNumber(new Integer[] { 5, 9, 3 });
+		for (Integer integer : in) {
+			if (integer != null)
+				System.out.println(integer);
+		}
+	}
+
+	private static Integer[] getMissingNumber(Integer[] x) {
+		Arrays.sort(x);
+		int first = x[0];
+		int last = x[x.length - 1] + 1;
+		Integer[] in = new Integer[last];
+		for (int i = first; i < in.length; i++) {
+			in[i] = i;
+		}
+		return in;
+	}
+}
